@@ -24,4 +24,5 @@ class SingUpFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_sing_up, container, false)
     }
 
+
 }
