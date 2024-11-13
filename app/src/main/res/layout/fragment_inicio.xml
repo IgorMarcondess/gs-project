@@ -23,13 +23,14 @@
         android:layout_width="348dp"
         android:layout_height="100dp"
         android:layout_marginHorizontal="32dp"
-        android:layout_marginTop="56dp"
+        android:layout_marginTop="72dp"
         android:backgroundTint="#F5F5F5"
         android:text="Cadastro de equipamento"
         android:textColor="#344E41"
         android:textSize="19sp"
         app:cornerRadius="8dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.253"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/titleTextView"
         app:strokeColor="#344E41"
@@ -38,7 +39,7 @@
     <Button
         android:id="@+id/historicoButton"
         android:layout_width="348dp"
-        android:layout_height="76dp"
+        android:layout_height="100dp"
         android:layout_marginHorizontal="32dp"
         android:layout_marginStart="32dp"
         android:layout_marginTop="40dp"
@@ -49,6 +50,23 @@
         app:cornerRadius="8dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cadastroButton"
+        app:strokeColor="#344E41"
+        app:strokeWidth="2dp" />
+
+    <Button
+        android:id="@+id/equipamentoButton"
+        android:layout_width="348dp"
+        android:layout_height="100dp"
+        android:layout_marginHorizontal="32dp"
+        android:layout_marginTop="40dp"
+        android:backgroundTint="#F5F5F5"
+        android:text="Equipamentos"
+        android:textColor="#344E41"
+        android:textSize="20sp"
+        app:cornerRadius="8dp"
+        app:layout_constraintEnd_toEndOf="@+id/historicoButton"
+        app:layout_constraintStart_toStartOf="@+id/historicoButton"
+        app:layout_constraintTop_toBottomOf="@+id/historicoButton"
         app:strokeColor="#344E41"
         app:strokeWidth="2dp" />
 

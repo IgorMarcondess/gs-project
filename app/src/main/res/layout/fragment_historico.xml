@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <!-- Guideline at the top for consistent spacing -->
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuideBegin="32dp" />
+
+    <!-- Title TextView -->
+    <TextView
+        android:id="@+id/titleTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Histórico"
+        android:textColor="#344E41"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/guidelineTop"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Item 1 Title -->
+    <TextView
+        android:id="@+id/item1Title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Tomada Sala de estar"
+        android:textColor="#344E41"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/titleTextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="16dp" />
+
+    <!-- Item 1 Details -->
+    <TextView
+        android:id="@+id/item1Details"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="40 Voltz\nCD3569"
+        android:textColor="#344E41"
+        app:layout_constraintTop_toBottomOf="@id/item1Title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="4dp" />
+
+
+    <!-- Item 1 Delete Button -->
+    <Button
+        android:id="@+id/item1DeleteButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Excluir"
+        android:backgroundTint="#344E41"
+        android:textColor="#FFFFFF"
+        app:layout_constraintTop_toBottomOf="@id/item1Details"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="8dp" />
+
+    <!-- Item 1 Edit Button -->
+    <Button
+        android:id="@+id/item1EditButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Editar"
+        android:backgroundTint="#344E41"
+        android:textColor="#FFFFFF"
+        app:layout_constraintTop_toBottomOf="@id/item1DeleteButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="4dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
