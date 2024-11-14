@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f1f3ef"
+    tools:context="Historico2Fragment">
+
+    <!-- Guideline para espaçamento superior -->
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="40dp" />
+
+    <!-- Guideline para espaçamento inferior -->
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineBottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_end="40dp" />
+
+    <!-- Título -->
+    <TextView
+        android:id="@+id/titleTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="HISTÓRICO"
+        android:textColor="#344E41"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guidelineTop" />
+
+    <!-- Seção "Hoje" -->
+
+    <!-- Seção "Semanal" -->
+
+    <!-- Seção "Mensal" -->
+
+    <TextView
+        android:id="@+id/hojeTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="68dp"
+        android:text="HOJE"
+        android:textColor="#344E41"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/titleTextView"
+        app:layout_constraintHorizontal_bias="0.484"
+        app:layout_constraintStart_toStartOf="@+id/titleTextView"
+        app:layout_constraintTop_toBottomOf="@id/titleTextView" />
+
+    <Button
+        android:id="@+id/hojeButton"
+        android:layout_width="200dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="116dp"
+        android:backgroundTint="#F5F5F5"
+        android:text="182 Voltz"
+        android:textAlignment="center"
+        android:textColor="#344E41"
+        android:textSize="20sp"
+        app:cornerRadius="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titleTextView"
+        app:strokeColor="#344E41"
+        app:strokeWidth="2dp" />
+
+    <!-- Botão "Voltar" -->
+
+    <TextView
+        android:id="@+id/semanalTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="SEMANAL"
+        android:textColor="#344E41"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/hojeButton"
+        app:layout_constraintStart_toStartOf="@+id/hojeButton"
+        app:layout_constraintTop_toBottomOf="@+id/hojeButton" />
+
+    <Button
+        android:id="@+id/semanalButton"
+        android:layout_width="200dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="68dp"
+        android:backgroundTint="#F5F5F5"
+        android:text="587 Voltz"
+        android:textAlignment="center"
+        android:textColor="#344E41"
+        android:textSize="20sp"
+        app:cornerRadius="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/hojeButton"
+        app:strokeColor="#344E41"
+        app:strokeWidth="2dp" />
+
+    <TextView
+        android:id="@+id/mensalTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="148dp"
+        android:text="MENSAL"
+        android:textColor="#344E41"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/hojeButton" />
+
+    <Button
+        android:id="@+id/mensalButton"
+        android:layout_width="200dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="120dp"
+        android:backgroundTint="#F5F5F5"
+        android:text="1753 Voltz"
+        android:textAlignment="center"
+        android:textColor="#344E41"
+        android:textSize="20sp"
+        app:cornerRadius="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/voltarButton"
+        app:layout_constraintEnd_toEndOf="@+id/mensalTextView"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="@+id/mensalTextView"
+        app:strokeColor="#344E41"
+        app:strokeWidth="2dp" />
+
+    <Button
+        android:id="@+id/voltarButton"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="196dp"
+        android:backgroundTint="#344E41"
+        android:text="Voltar"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        app:cornerRadius="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mensalTextView" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
