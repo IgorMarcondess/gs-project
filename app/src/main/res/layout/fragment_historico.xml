@@ -36,7 +36,7 @@
     <!-- Item 1 Delete Button -->
 
     <TextView
-        android:id="@+id/item1Title"
+        android:id="@+id/nomeTomadaTextView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -55,7 +55,7 @@
     <!-- Item 1 Edit Button -->
 
     <TextView
-        android:id="@+id/item1Details"
+        android:id="@+id/voltzTextView"
         android:layout_width="74dp"
         android:layout_height="34dp"
         android:layout_marginStart="96dp"
@@ -64,10 +64,10 @@
         android:textColor="#344E41"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/item1Title" />
+        app:layout_constraintTop_toBottomOf="@+id/nomeTomadaTextView" />
 
     <Button
-        android:id="@+id/item1DeleteButton"
+        android:id="@+id/deleteButton"
         android:layout_width="347dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
@@ -76,10 +76,10 @@
         android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/item1Details" />
+        app:layout_constraintTop_toBottomOf="@+id/voltzTextView" />
 
     <Button
-        android:id="@+id/item1EditButton"
+        android:id="@+id/EditButton"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -90,18 +90,18 @@
         android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/item1DeleteButton" />
+        app:layout_constraintTop_toBottomOf="@id/deleteButton" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/codigoTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="35dp"
         android:text="CD3569"
         android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="@+id/item1Details"
-        app:layout_constraintStart_toEndOf="@+id/item1Details"
-        app:layout_constraintTop_toTopOf="@+id/item1Details" />
+        app:layout_constraintBottom_toBottomOf="@+id/voltzTextView"
+        app:layout_constraintStart_toEndOf="@+id/voltzTextView"
+        app:layout_constraintTop_toTopOf="@+id/voltzTextView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 
