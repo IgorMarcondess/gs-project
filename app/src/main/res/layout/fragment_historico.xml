@@ -1,107 +1,107 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#F1F3EF"
     android:padding="16dp">
 
-    <!-- Guideline at the top for consistent spacing -->
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guidelineTop"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuideBegin="32dp" />
-
-    <!-- Title TextView -->
+    <!-- Título -->
     <TextView
-        android:id="@+id/titleTextView"
+        android:id="@+id/historicoTitulo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
         android:text="Histórico"
+        android:textSize="20sp"
         android:textColor="#344E41"
-        android:textSize="24sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/guidelineTop" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
-    <!-- Item 1 Title -->
-
-    <!-- Item 1 Details -->
-
-
-    <!-- Item 1 Delete Button -->
-
-    <TextView
-        android:id="@+id/nomeTomadaTextView"
+    <!-- Cartão do histórico -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/historicoCard"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:text="Tomada Sala de estar"
-        android:textAlignment="center"
-        android:textColor="#344E41"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        android:layout_marginBottom="16dp"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="4dp"
+        app:layout_constraintTop_toBottomOf="@id/historicoTitulo"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/titleTextView" />
+        app:layout_constraintEnd_toEndOf="parent">
 
-    <!-- Item 1 Edit Button -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
 
-    <TextView
-        android:id="@+id/voltzTextView"
-        android:layout_width="74dp"
-        android:layout_height="34dp"
-        android:layout_marginStart="96dp"
-        android:layout_marginTop="4dp"
-        android:text="40 Voltz"
-        android:textColor="#344E41"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nomeTomadaTextView" />
+            <!-- Nome do equipamento -->
+            <TextView
+                android:id="@+id/nomeEquipamento"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tomada Sala de estar"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#344E41"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
 
-    <Button
-        android:id="@+id/deleteButton"
-        android:layout_width="347dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:backgroundTint="#344E41"
-        android:text="Excluir"
-        android:textColor="#FFFFFF"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/voltzTextView" />
+            <!-- Voltagem -->
+            <TextView
+                android:id="@+id/voltagemEquipamento"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="40 Voltz"
+                android:textSize="16sp"
+                android:textColor="#344E41"
+                app:layout_constraintTop_toBottomOf="@id/nomeEquipamento"
+                app:layout_constraintStart_toStartOf="parent" />
 
-    <Button
-        android:id="@+id/EditButton"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="16dp"
-        android:backgroundTint="#344E41"
-        android:text="Editar"
-        android:textColor="#FFFFFF"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/deleteButton" />
+            <!-- Código -->
+            <TextView
+                android:id="@+id/codigoEquipamento"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="CD3569"
+                android:textSize="16sp"
+                android:textColor="#344E41"
+                app:layout_constraintTop_toBottomOf="@id/nomeEquipamento"
+                app:layout_constraintEnd_toEndOf="parent" />
 
-    <TextView
-        android:id="@+id/codigoTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="35dp"
-        android:text="CD3569"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="@+id/voltzTextView"
-        app:layout_constraintStart_toEndOf="@+id/voltzTextView"
-        app:layout_constraintTop_toTopOf="@+id/voltzTextView" />
+            <!-- Botões em cadeia horizontal -->
+            <Button
+                android:id="@+id/excluirButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Excluir"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="8dp"
+                android:backgroundTint="#344E41"
+                android:textColor="#FFFFFF"
+                app:layout_constraintTop_toBottomOf="@id/voltagemEquipamento"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/editarButton" />
+
+            <Button
+                android:id="@+id/editarButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Editar"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="8dp"
+                android:backgroundTint="#344E41"
+                android:textColor="#FFFFFF"
+                app:layout_constraintTop_toBottomOf="@id/voltagemEquipamento"
+                app:layout_constraintStart_toEndOf="@id/excluirButton"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
-

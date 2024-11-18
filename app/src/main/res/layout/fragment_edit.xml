@@ -1,175 +1,167 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#f1f3ef"
+    android:padding="16dp"
     tools:context=".editFragment">
 
-    <?xml version="1.0" encoding="utf-8"?>
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#f1f3ef"
-        android:padding="16dp">
+    <!-- Guideline para alinhar o conteúdo verticalmente -->
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineVerticalCenter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="16dp" />
 
-        <!-- Guideline para alinhar o conteúdo verticalmente -->
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guidelineVerticalCenter"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintGuide_begin="16dp" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="16dp" />
 
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintGuide_end="16dp" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="20dp" />
 
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guidelineTop"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintGuide_begin="20dp" />
+    <!-- Título -->
+    <TextView
+        android:id="@+id/tituloTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="84dp"
+        android:text="Editar equipamento"
+        android:textColor="#344E41"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/guideline5"
+        app:layout_constraintStart_toStartOf="@+id/guidelineVerticalCenter"
+        app:layout_constraintTop_toTopOf="@+id/guidelineTop" />
 
-        <!-- Título -->
+    <!-- Pergunta para o Código do Equipamento -->
+    <TextView
+        android:id="@+id/codigoPerguntaTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="Código do equipamento"
+        android:textColor="#344E41"
+        app:layout_constraintEnd_toStartOf="@+id/guideline5"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/guidelineVerticalCenter"
+        app:layout_constraintTop_toBottomOf="@id/tituloTextView" />
 
-        <!-- Pergunta para o Código do Equipamento -->
-        <TextView
-            android:id="@+id/tituloTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="84dp"
-            android:text="Editar de equipamento"
-            android:textColor="#344E41"
-            android:textSize="25sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toStartOf="@+id/guideline5"
-            app:layout_constraintStart_toStartOf="@+id/guidelineVerticalCenter"
-            app:layout_constraintTop_toTopOf="@+id/guidelineTop" />
+    <!-- Campo Código do Equipamento -->
+    <EditText
+        android:id="@+id/codigoEquipamentoEditText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="15dp"
+        android:background="@drawable/input"
+        android:hint="CD5568"
+        android:padding="12dp"
+        android:textAlignment="center"
+        android:textColor="#344E41"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toStartOf="@+id/guideline5"
+        app:layout_constraintStart_toStartOf="@+id/guidelineVerticalCenter"
+        app:layout_constraintTop_toBottomOf="@id/codigoPerguntaTextView" />
 
-        <TextView
-            android:id="@+id/codigoPerguntaTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
-            android:text="Código do equipamento"
-            android:textColor="#344E41"
-            app:layout_constraintEnd_toStartOf="@+id/guideline5"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="@+id/guidelineVerticalCenter"
-            app:layout_constraintTop_toBottomOf="@id/tituloTextView" />
+    <!-- Pergunta para o Nome do Equipamento -->
+    <TextView
+        android:id="@+id/nomePerguntaTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Nome do equipamento"
+        android:textColor="#344E41"
+        app:layout_constraintEnd_toStartOf="@+id/guideline5"
+        app:layout_constraintStart_toStartOf="@+id/guidelineVerticalCenter"
+        app:layout_constraintTop_toBottomOf="@id/codigoEquipamentoEditText" />
 
-        <!-- Campo Código do Equipamento -->
-        <EditText
-            android:id="@+id/codigoEquipamentoEditText"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="15dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="15dp"
-            android:background="@drawable/input"
-            android:hint="CD5568"
-            android:padding="12dp"
-            android:textAlignment="center"
-            android:textColor="#344E41"
-            android:textSize="18sp"
-            app:layout_constraintEnd_toStartOf="@+id/guideline5"
-            app:layout_constraintStart_toStartOf="@+id/guidelineVerticalCenter"
-            app:layout_constraintTop_toBottomOf="@id/codigoPerguntaTextView" />
+    <!-- Campo Nome do Equipamento -->
+    <EditText
+        android:id="@+id/nomeEquipamentoEditText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="15dp"
+        android:background="@drawable/input"
+        android:hint="Equipamento"
+        android:padding="12dp"
+        android:textAlignment="center"
+        android:textColor="#344E41"
+        app:layout_constraintEnd_toStartOf="@+id/guideline5"
+        app:layout_constraintStart_toStartOf="@+id/guidelineVerticalCenter"
+        app:layout_constraintTop_toBottomOf="@id/nomePerguntaTextView" />
 
-        <!-- Pergunta para o Nome do Equipamento -->
-        <TextView
-            android:id="@+id/nomePerguntaTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="Nome do equipamento"
-            android:textColor="#344E41"
-            app:layout_constraintEnd_toStartOf="@+id/guideline5"
-            app:layout_constraintStart_toStartOf="@+id/guidelineVerticalCenter"
-            app:layout_constraintTop_toBottomOf="@id/codigoEquipamentoEditText" />
+    <!-- Pergunta sobre a Voltagem -->
+    <TextView
+        android:id="@+id/voltagemPerguntaTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Qual a voltagem da tomada? (220v / 110v)"
+        android:textColor="#344E41"
+        app:layout_constraintEnd_toStartOf="@+id/guideline5"
+        app:layout_constraintStart_toStartOf="@+id/guidelineVerticalCenter"
+        app:layout_constraintTop_toBottomOf="@id/nomeEquipamentoEditText" />
 
-        <!-- Campo Nome do Equipamento -->
-        <EditText
-            android:id="@+id/nomeEquipamentoEditText"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="15dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="15dp"
-            android:background="@drawable/input"
-            android:hint="Equipamento"
-            android:padding="12dp"
-            android:textAlignment="center"
-            android:textColor="#344E41"
-            app:layout_constraintEnd_toStartOf="@+id/guideline5"
-            app:layout_constraintStart_toStartOf="@+id/guidelineVerticalCenter"
-            app:layout_constraintTop_toBottomOf="@id/nomePerguntaTextView" />
+    <!-- Campo Voltagem -->
+    <EditText
+        android:id="@+id/voltagemEditText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="15dp"
+        android:background="@drawable/input"
+        android:hint="Voltagem"
+        android:padding="12dp"
+        android:textAlignment="center"
+        android:textColor="#344E41"
+        app:layout_constraintEnd_toStartOf="@+id/guideline5"
+        app:layout_constraintStart_toStartOf="@+id/guidelineVerticalCenter"
+        app:layout_constraintTop_toBottomOf="@id/voltagemPerguntaTextView" />
 
-        <!-- Pergunta sobre a Voltagem -->
-        <TextView
-            android:id="@+id/voltagemPerguntaTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="Qual a voltagem da tomada? (220v / 110v)"
-            android:textColor="#344E41"
-            app:layout_constraintEnd_toStartOf="@+id/guideline5"
-            app:layout_constraintStart_toStartOf="@+id/guidelineVerticalCenter"
-            app:layout_constraintTop_toBottomOf="@id/nomeEquipamentoEditText" />
+    <!-- Botão Editar -->
+    <Button
+        android:id="@+id/editarButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginStart="15dp"
+        android:backgroundTint="#344E41"
+        android:text="Editar"
+        android:textColor="#FFFFFF"
+        app:layout_constraintEnd_toStartOf="@+id/guideline5"
+        app:layout_constraintStart_toStartOf="@+id/guidelineVerticalCenter"
+        app:layout_constraintTop_toBottomOf="@id/voltagemEditText" />
 
-        <!-- Campo Voltagem -->
-        <EditText
-            android:id="@+id/voltagemEditText"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="15dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="15dp"
-            android:background="@drawable/input"
-            android:hint="Voltagem"
-            android:padding="12dp"
-            android:textAlignment="center"
-            android:textColor="#344E41"
-            app:layout_constraintEnd_toStartOf="@+id/guideline5"
-            app:layout_constraintStart_toStartOf="@+id/guidelineVerticalCenter"
-            app:layout_constraintTop_toBottomOf="@id/voltagemPerguntaTextView" />
+    <!-- Botão Voltar -->
+    <Button
+        android:id="@+id/voltarButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginStart="15dp"
+        android:backgroundTint="#344E41"
+        android:text="Voltar"
+        android:textColor="#FFFFFF"
+        app:layout_constraintEnd_toStartOf="@+id/guideline5"
+        app:layout_constraintStart_toStartOf="@+id/guidelineVerticalCenter"
+        app:layout_constraintTop_toBottomOf="@id/editarButton" />
 
-        <!-- Botão Editar -->
-        <Button
-            android:id="@+id/editarButton"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            android:layout_marginEnd="15dp"
-            android:layout_marginStart="15dp"
-            android:backgroundTint="#344E41"
-            android:text="Editar"
-            android:textColor="#FFFFFF"
-            app:layout_constraintEnd_toStartOf="@+id/guideline5"
-            app:layout_constraintStart_toStartOf="@+id/guidelineVerticalCenter"
-            app:layout_constraintTop_toBottomOf="@id/voltagemEditText" />
-
-        <!-- Botão Voltar -->
-        <Button
-            android:id="@+id/voltarButton"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="15dp"
-            android:layout_marginStart="15dp"
-            android:backgroundTint="#344E41"
-            android:text="Voltar"
-            android:textColor="#FFFFFF"
-            app:layout_constraintEnd_toStartOf="@+id/guideline5"
-            app:layout_constraintStart_toStartOf="@+id/guidelineVerticalCenter"
-            app:layout_constraintTop_toBottomOf="@id/editarButton" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-</FrameLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
