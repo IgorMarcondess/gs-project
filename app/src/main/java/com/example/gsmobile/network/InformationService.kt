@@ -13,7 +13,7 @@ class InformationService(
 
     private val api: InformationAPI = NetworkUtils.retrofit.create(InformationAPI::class.java)
 
-    suspend fun sendInformation(nome: String, voltagem: String): TomadaFragment {
+    suspend fun sendInformation(nome: String, voltagem: Int): TomadaFragment {
         val request = Information(nome, voltagem)
         return api.sendInformation(request)
     }

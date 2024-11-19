@@ -1,27 +1,86 @@
 package com.example.gsmobile
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.fragment.app.Fragment
+import com.example.gsmobile.databinding.FragmentTomadaBinding
+import com.example.gsmobile.network.InformationService
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import okhttp3.OkHttpClient
 
 class TomadaFragment : Fragment() {
 
+    private var _binding: FragmentTomadaBinding? = null
+    private val binding get() = _binding!!
+    private lateinit var service: InformationService
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {
 
-        }
+        // Configurar o serviço de rede
+        val httpClient = OkHttpClient.Builder().build()
+        service = InformationService(httpClient, this)
     }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_tomada, container, false)
+        // Inicializar o View Binding
+        _binding = FragmentTomadaBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        // Configurar o botão "ENVIAR"
+        binding.enviarButton.setOnClickListener {
+            sendInformation()
+        }
+
+    }
+
+    private fun sendInformation() {
+        val nome = binding.nomeEquipamentoEditText.text.toString().trim()
+        val voltagemText = binding.voltagemEditText.text.toString().trim()
+
+        // Validar se os campos estão preenchidos
+        if (nome.isEmpty() || voltagemText.isEmpty()) {
+            Toast.makeText(requireContext(), "Preencha todos os campos!", Toast.LENGTH_SHORT).show()
+            return
+        }
+
+        // Converter a voltagem para Int diretamente com validação
+        val voltagem = voltagemText.toIntOrNull()
+        if (voltagem == null) {
+            Toast.makeText(requireContext(), "Voltagem deve ser um número válido!", Toast.LENGTH_SHORT).show()
+            return
+        }
+
+        // Fazer a chamada POST usando corrotinas
+        CoroutineScope(Dispatchers.IO).launch {
+            try {
+                val response = service.sendInformation(nome, voltagem)
+                // Processar a resposta na thread principal
+                CoroutineScope(Dispatchers.Main).launch {
+                    Toast.makeText(requireContext(), "Informações enviadas com sucesso!", Toast.LENGTH_SHORT).show()
+                }
+            } catch (e: Exception) {
+                CoroutineScope(Dispatchers.Main).launch {
+                    Toast.makeText(requireContext(), "Erro ao enviar informações: ${e.message}", Toast.LENGTH_SHORT).show()
+                }
+            }
+        }
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null // Evita vazamento de memória
+    }
 }

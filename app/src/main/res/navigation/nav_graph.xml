@@ -9,5 +9,13 @@
         android:id="@+id/homeFragment"
         android:name="com.example.gsmobile.HomeFragment"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_tomadaFragment2"
+            app:destination="@id/tomadaFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/tomadaFragment2"
+        android:name="com.example.gsmobile.TomadaFragment"
+        android:label="TomadaFragment" />
 </navigation>

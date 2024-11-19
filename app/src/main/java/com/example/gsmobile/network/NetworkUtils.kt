@@ -12,7 +12,7 @@ object NetworkUtils {
         })
         .build()
 
-    private const val BASE_URL = "http://localhost:8080/"
+    private const val BASE_URL = "http://40.90.198.227:8080/"
     val retrofit = Retrofit.Builder()
         .baseUrl(BASE_URL)
         .addConverterFactory(GsonConverterFactory.create())

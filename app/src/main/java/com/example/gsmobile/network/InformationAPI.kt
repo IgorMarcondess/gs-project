@@ -7,10 +7,10 @@ import retrofit2.http.POST
 
 data class Information(
     val nome: String,
-    val voltagem: String
+    val voltagem: Int
 )
 interface InformationAPI {
 
-    @POST("/sendInformation")
+    @POST("tomada/criar?cpfUser=92712116003")
     suspend fun sendInformation(@Body request: Information): TomadaFragment
 }
