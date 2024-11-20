@@ -13,9 +13,16 @@
         <action
             android:id="@+id/action_homeFragment_to_tomadaFragment2"
             app:destination="@id/tomadaFragment2" />
+        <action
+            android:id="@+id/action_homeFragment_to_historicoFragment"
+            app:destination="@id/historicoFragment" />
     </fragment>
     <fragment
         android:id="@+id/tomadaFragment2"
         android:name="com.example.gsmobile.TomadaFragment"
         android:label="TomadaFragment" />
+    <fragment
+        android:id="@+id/historicoFragment"
+        android:name="com.example.gsmobile.historicoFragment"
+        android:label="historicoFragment" />
 </navigation>

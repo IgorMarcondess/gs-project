@@ -22,7 +22,7 @@ class TomadaFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        // Configurar o serviço de rede
+        //configuração do OKHTTP ( MOSTRA LOG DOQ ESTA ACONTECENDO COM A MINHA REQUISIÇÃO )
         val httpClient = OkHttpClient.Builder().build()
         service = InformationService(httpClient, this)
     }
@@ -31,7 +31,6 @@ class TomadaFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inicializar o View Binding
         _binding = FragmentTomadaBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -39,7 +38,6 @@ class TomadaFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // Configurar o botão "ENVIAR"
         binding.enviarButton.setOnClickListener {
             sendInformation()
         }
@@ -50,24 +48,23 @@ class TomadaFragment : Fragment() {
         val nome = binding.nomeEquipamentoEditText.text.toString().trim()
         val voltagemText = binding.voltagemEditText.text.toString().trim()
 
-        // Validar se os campos estão preenchidos
+
         if (nome.isEmpty() || voltagemText.isEmpty()) {
             Toast.makeText(requireContext(), "Preencha todos os campos!", Toast.LENGTH_SHORT).show()
             return
         }
 
-        // Converter a voltagem para Int diretamente com validação
-        val voltagem = voltagemText.toIntOrNull()
-        if (voltagem == null) {
-            Toast.makeText(requireContext(), "Voltagem deve ser um número válido!", Toast.LENGTH_SHORT).show()
-            return
-        }
 
-        // Fazer a chamada POST usando corrotinas
+//                val voltagem = voltagemText.toIntOrNull()
+//                if (voltagem == null) {
+//                    Toast.makeText(requireContext(), "Voltagem deve ser um número válido!", Toast.LENGTH_SHORT).show()
+//                    return
+//                }
+
+
         CoroutineScope(Dispatchers.IO).launch {
             try {
-                val response = service.sendInformation(nome, voltagem)
-                // Processar a resposta na thread principal
+                val response = service.sendInformation(nome, voltagemText)
                 CoroutineScope(Dispatchers.Main).launch {
                     Toast.makeText(requireContext(), "Informações enviadas com sucesso!", Toast.LENGTH_SHORT).show()
                 }
@@ -81,6 +78,6 @@ class TomadaFragment : Fragment() {
 
     override fun onDestroyView() {
         super.onDestroyView()
-        _binding = null // Evita vazamento de memória
+        _binding = null
     }
 }
