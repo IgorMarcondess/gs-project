@@ -4,104 +4,33 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F1F3EF"
-    android:padding="16dp">
+    android:padding="16dp"
+    android:background="#F1F3EF">
 
-    <!-- Título -->
+    <!-- Título da lista -->
     <TextView
-        android:id="@+id/historicoTitulo"
+        android:id="@+id/tituloLista"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Histórico"
+        android:text="Histórico de Tomadas"
         android:textSize="20sp"
-        android:textColor="#344E41"
         android:textStyle="bold"
-        android:layout_marginBottom="16dp"
+        android:textColor="#344E41"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="16dp" />
 
-    <!-- Cartão do histórico -->
-    <androidx.cardview.widget.CardView
-        android:id="@+id/historicoCard"
+    <!-- RecyclerView -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewTomadas"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginBottom="16dp"
-        app:cardCornerRadius="8dp"
-        app:cardElevation="4dp"
-        app:layout_constraintTop_toBottomOf="@id/historicoTitulo"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/tituloLista"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="16dp">
-
-            <!-- Nome do equipamento -->
-            <TextView
-                android:id="@+id/nomeEquipamento"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Tomada Sala de estar"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                android:textColor="#344E41"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent" />
-
-            <!-- Voltagem -->
-            <TextView
-                android:id="@+id/voltagemEquipamento"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="40 Voltz"
-                android:textSize="16sp"
-                android:textColor="#344E41"
-                app:layout_constraintTop_toBottomOf="@id/nomeEquipamento"
-                app:layout_constraintStart_toStartOf="parent" />
-
-            <!-- Código -->
-            <TextView
-                android:id="@+id/codigoEquipamento"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="CD3569"
-                android:textSize="16sp"
-                android:textColor="#344E41"
-                app:layout_constraintTop_toBottomOf="@id/nomeEquipamento"
-                app:layout_constraintEnd_toEndOf="parent" />
-
-            <!-- Botões em cadeia horizontal -->
-            <Button
-                android:id="@+id/excluirButton"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:text="Excluir"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="8dp"
-                android:backgroundTint="#344E41"
-                android:textColor="#FFFFFF"
-                app:layout_constraintTop_toBottomOf="@id/voltagemEquipamento"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toStartOf="@id/editarButton" />
-
-            <Button
-                android:id="@+id/editarButton"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:text="Editar"
-                android:layout_marginTop="16dp"
-                android:layout_marginStart="8dp"
-                android:backgroundTint="#344E41"
-                android:textColor="#FFFFFF"
-                app:layout_constraintTop_toBottomOf="@id/voltagemEquipamento"
-                app:layout_constraintStart_toEndOf="@id/excluirButton"
-                app:layout_constraintEnd_toEndOf="parent" />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </androidx.cardview.widget.CardView>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:clipToPadding="false"
+        android:paddingBottom="8dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
