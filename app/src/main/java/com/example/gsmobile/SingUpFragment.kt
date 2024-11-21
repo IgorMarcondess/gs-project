@@ -64,7 +64,7 @@ class SingUpFragment : Fragment() {
                         saveUserData(it, nome, email, telefone)
                     }
                     Toast.makeText(context, "Cadastro bem-sucedido", Toast.LENGTH_SHORT).show()
-                    findNavController().navigate()
+                    //findNavController().navigate()
                 } else {
                     Toast.makeText(context, "Erro ao realizar cadastro", Toast.LENGTH_SHORT).show()
                     Log.e("SignUpFragment", "Erro ao realizar cadastro de usuário", task.exception)

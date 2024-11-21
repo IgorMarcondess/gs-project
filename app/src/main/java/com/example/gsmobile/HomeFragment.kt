@@ -39,7 +39,7 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         binding.registerButton.setOnClickListener {
-            findNavController().navigate()
+            findNavController().navigate(R.id.action_homeFragment_to_historicoFragment)
         }
         binding.LogInbutton.setOnClickListener {
 
@@ -48,13 +48,20 @@ class HomeFragment : Fragment() {
                 val email = binding.EmailEditText.text.toString()
                 val password = binding.PasswordEditText.text.toString()
 
-                val result = auth.signInWithEmailAndPassword(email, password).await()
-
-                if (result.user != null) {
-                    findNavController().navigate(R.id.landingPageFragment)
-                }else {
-                    Toast.makeText(context, "Erro ao realizar login, verifique seus dados", Toast.LENGTH_SHORT).show()
-                    Log.e("HomeFragment", "Erro ao realizar login de usuário")
+                try {
+                    val result = auth.signInWithEmailAndPassword(email, password).await()
+                    if (result.user != null) {
+                        // Navegue para a próxima tela após login bem-sucedido
+                       // findNavController().navigate(R.id.action_homeFragment_to_dashboardFragment)
+                    }
+                } catch (e: Exception) {
+                    // Loga o erro e exibe uma mensagem para o usuário
+                    Log.e("HomeFragment", "Erro ao realizar login: ${e.message}")
+                    Toast.makeText(
+                        context,
+                        "Erro ao realizar login. Verifique seus dados.",
+                        Toast.LENGTH_SHORT
+                    ).show()
                 }
             }
         }
