@@ -9,6 +9,8 @@ import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.gsmobile.databinding.FragmentHistoricoBinding
 import com.example.gsmobile.network.InformationAPI
+import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
 
 
 class historicoFragment : Fragment() {
@@ -21,9 +23,12 @@ class historicoFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {
+        val retrofit = Retrofit.Builder()
+            .baseUrl("http://40.90.198.227:80/")
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
 
-        }
+        api = retrofit.create(InformationAPI::class.java)
     }
 
     override fun onCreateView(
@@ -32,6 +37,10 @@ class historicoFragment : Fragment() {
     ): View? {
         _binding = FragmentHistoricoBinding.inflate(inflater, container, false)
         return binding.root
+    }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        setupRecyclerView()
     }
 
     private fun setupRecyclerView() {

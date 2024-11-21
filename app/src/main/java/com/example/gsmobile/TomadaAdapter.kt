@@ -17,9 +17,9 @@ import kotlinx.coroutines.withContext
 
 class TomadaAdapter(
     private val context: Context,
-    private val api: InformationAPI, // Passar a instância da API
+    private val api: InformationAPI,
     private val onExcluirClick: (Tomadas) -> Unit,
-    private val onEditarClick: (Tomadas) -> Unit // Apenas redireciona para o fragment
+    private val onEditarClick: (Tomadas) -> Unit
 ) : RecyclerView.Adapter<TomadaAdapter.ViewHolder>() {
 
     private var tomadasList: List<Tomadas> = emptyList()
@@ -30,17 +30,13 @@ class TomadaAdapter(
 
     inner class ViewHolder(private val binding: ItemTomadaBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(tomada: Tomadas) {
-            // Preenche os dados no card
             binding.nomeEquipamento.text = tomada.nomeTomada
             binding.voltagemEquipamento.text = "${tomada.voltagem} Voltz"
             binding.codigoEquipamento.text = tomada.idTomada.toString()
 
-            // Configura o botão de excluir com a ação
             binding.excluirButton.setOnClickListener {
                 onExcluirClick(tomada)
             }
-
-            // Configura o botão de editar com a ação para abrir outra tela
             binding.editarButton.setOnClickListener {
                 onEditarClick(tomada)
             }
@@ -69,7 +65,6 @@ class TomadaAdapter(
                 }
             } catch (e: Exception) {
                 withContext(Dispatchers.Main) {
-                    // Exibe uma mensagem de erro ao usuário
                     Toast.makeText(context, "erro ao carregar os dados", Toast.LENGTH_SHORT).show()
                 }
             }
