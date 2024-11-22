@@ -1,25 +1,32 @@
 package com.example.gsmobile.network
 
-import androidx.fragment.app.Fragment
 import com.example.gsmobile.TomadaFragment
-import com.example.gsmobile.historicoFragment
 import okhttp3.OkHttpClient
 
-
-
 class InformationService(
-    private val httpClient: OkHttpClient,
-    private val TomadaFragment: TomadaFragment,
+    private val httpClient: OkHttpClient
 ) {
-
     private val api: InformationAPI = NetworkUtils.retrofit.create(InformationAPI::class.java)
 
+    // Criar uma nova tomada
     suspend fun sendInformation(nomeTomada: String, voltagem: String): TomadaFragment {
         val request = Information(nomeTomada, voltagem)
         return api.sendInformation(request)
     }
 
+    // Buscar todas as tomadas
     suspend fun getAllTomadas(): List<Tomadas> {
         return api.getTomadas()
+    }
+
+    // Deletar uma tomada pelo ID
+    suspend fun deleteTomada(id: Int) {
+        api.deleteTomada(id)
+    }
+
+    // Editar uma tomada pelo ID
+    suspend fun updateTomada(id: Int, nomeTomada: String, voltagem: String) {
+        val request = Information(nomeTomada, voltagem)
+        api.updateTomada(id, request)
     }
 }

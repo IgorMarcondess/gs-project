@@ -14,27 +14,31 @@
             android:id="@+id/action_homeFragment_to_singUpFragment"
             app:destination="@id/singUpFragment" />
         <action
-            android:id="@+id/action_homeFragment_to_inicioFragment"
-            app:destination="@id/inicioFragment" />
+            android:id="@+id/action_homeFragment_to_editFragment"
+            app:destination="@id/editFragment" />
         <action
             android:id="@+id/action_homeFragment_to_tomadaFragment"
             app:destination="@id/tomadaFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_inicioFragment"
+            app:destination="@id/inicioFragment" />
     </fragment>
     <fragment
         android:id="@+id/singUpFragment"
         android:name="com.example.gsmobile.SingUpFragment"
-        android:label="SingUpFragment" >
-        <action
-            android:id="@+id/action_singUpFragment_to_inicioFragment"
-            app:destination="@id/inicioFragment" />
-    </fragment>
+        android:label="SingUpFragment" />
+    <fragment
+        android:id="@+id/editFragment"
+        android:name="com.example.gsmobile.editFragment"
+        android:label="fragment_edit"
+        tools:layout="@layout/fragment_edit" />
+    <fragment
+        android:id="@+id/tomadaFragment"
+        android:name="com.example.gsmobile.TomadaFragment"
+        android:label="TomadaFragment" />
     <fragment
         android:id="@+id/inicioFragment"
         android:name="com.example.gsmobile.InicioFragment"
         android:label="fragment_inicio"
         tools:layout="@layout/fragment_inicio" />
-    <fragment
-        android:id="@+id/tomadaFragment"
-        android:name="com.example.gsmobile.TomadaFragment"
-        android:label="TomadaFragment" />
 </navigation>

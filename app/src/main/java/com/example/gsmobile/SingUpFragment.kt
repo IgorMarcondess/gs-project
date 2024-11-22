@@ -68,7 +68,7 @@ class SingUpFragment : Fragment() {
                         saveUserData(userId, nome, email, telefone) // Salvar no Realtime Database
                     }
                     Toast.makeText(context, "Cadastro bem-sucedido", Toast.LENGTH_SHORT).show()
-                    findNavController().navigate(R.id.action_singUpFragment_to_inicioFragment)
+                    findNavController().navigate(R.id.action_homeFragment_to_singUpFragment)
                 } else {
                     // Erro no registro
                     Toast.makeText(context, "Erro ao realizar cadastro: ${task.exception?.message}", Toast.LENGTH_SHORT).show()

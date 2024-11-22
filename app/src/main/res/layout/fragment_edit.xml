@@ -60,7 +60,7 @@
 
     <!-- Campo Código do Equipamento -->
     <EditText
-        android:id="@+id/codigoEquipamentoEditText"
+        android:id="@+id/idEquipamentoEditText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="15dp"
@@ -86,7 +86,7 @@
         android:textColor="#344E41"
         app:layout_constraintEnd_toStartOf="@+id/guideline5"
         app:layout_constraintStart_toStartOf="@+id/guidelineVerticalCenter"
-        app:layout_constraintTop_toBottomOf="@id/codigoEquipamentoEditText" />
+        app:layout_constraintTop_toBottomOf="@id/idEquipamentoEditText" />
 
     <!-- Campo Nome do Equipamento -->
     <EditText

@@ -24,7 +24,7 @@ class TomadaFragment : Fragment() {
 
         //configuração do OKHTTP ( MOSTRA LOG DOQ ESTA ACONTECENDO COM A MINHA REQUISIÇÃO )
         val httpClient = OkHttpClient.Builder().build()
-        service = InformationService(httpClient, this)
+        service = InformationService(httpClient)
     }
 
     override fun onCreateView(
