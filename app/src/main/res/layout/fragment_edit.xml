@@ -68,6 +68,7 @@
         android:textAlignment="center"
         android:textColor="#344E41"
         android:textSize="18sp"
+        android:inputType="number"
         app:layout_constraintEnd_toStartOf="@+id/guideline5"
         app:layout_constraintStart_toStartOf="@+id/guidelineVerticalCenter"
         app:layout_constraintTop_toBottomOf="@id/codigoPerguntaTextView" />
@@ -95,7 +96,9 @@
         android:padding="12dp"
         android:textAlignment="center"
         android:textColor="#344E41"
+        android:inputType="text"
         app:layout_constraintEnd_toStartOf="@+id/guideline5"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/guidelineVerticalCenter"
         app:layout_constraintTop_toBottomOf="@id/nomePerguntaTextView" />
 
@@ -122,6 +125,7 @@
         android:padding="12dp"
         android:textAlignment="center"
         android:textColor="#344E41"
+        android:inputType="number"
         app:layout_constraintEnd_toStartOf="@+id/guideline5"
         app:layout_constraintStart_toStartOf="@+id/guidelineVerticalCenter"
         app:layout_constraintTop_toBottomOf="@id/voltagemPerguntaTextView" />
