@@ -51,11 +51,9 @@ class HomeFragment : Fragment() {
                 try {
                     val result = auth.signInWithEmailAndPassword(email, password).await()
                     if (result.user != null) {
-                        // Navegue para a próxima tela após login bem-sucedido
                        findNavController().navigate(R.id.action_homeFragment_to_inicioFragment)
                     }
                 } catch (e: Exception) {
-                    // Loga o erro e exibe uma mensagem para o usuário
                     Log.e("HomeFragment", "Erro ao realizar login: ${e.message}")
                     Toast.makeText(
                         context,

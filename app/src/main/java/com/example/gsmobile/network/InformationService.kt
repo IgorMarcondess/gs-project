@@ -8,13 +8,11 @@ class InformationService(
 ) {
     private val api: InformationAPI = NetworkUtils.retrofit.create(InformationAPI::class.java)
 
-    // Criar uma nova tomada
     suspend fun sendInformation(nomeTomada: String, voltagem: String): TomadaFragment {
         val request = Information(nomeTomada, voltagem)
         return api.sendInformation(request)
     }
 
-    // Buscar todas as tomadas
     suspend fun getAllTomadas(): List<Tomadas> {
         return api.getTomadas()
     }
@@ -22,7 +20,6 @@ class InformationService(
     suspend fun deleteTomada(id: Int) {
         api.deleteTomada(id)
     }
-
 
     suspend fun updateTomada(id: Int, nomeTomada: String, voltagem: String) {
         val request = Information(nomeTomada, voltagem)

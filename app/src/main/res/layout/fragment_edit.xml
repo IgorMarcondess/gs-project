@@ -9,7 +9,6 @@
     android:padding="16dp"
     tools:context=".editFragment">
 
-    <!-- Guideline para alinhar o conteúdo verticalmente -->
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guidelineVerticalCenter"
         android:layout_width="wrap_content"
@@ -31,9 +30,6 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_begin="20dp" />
 
-    <!-- Título -->
-
-    <!-- Pergunta para o Código do Equipamento -->
     <TextView
         android:id="@+id/tituloTextView"
         android:layout_width="wrap_content"
@@ -59,7 +55,6 @@
         app:layout_constraintStart_toStartOf="@+id/guidelineVerticalCenter"
         app:layout_constraintTop_toBottomOf="@id/tituloTextView" />
 
-    <!-- Campo Código do Equipamento -->
     <EditText
         android:id="@+id/idEquipamentoEditText"
         android:layout_width="0dp"
@@ -77,7 +72,6 @@
         app:layout_constraintStart_toStartOf="@+id/guidelineVerticalCenter"
         app:layout_constraintTop_toBottomOf="@id/codigoPerguntaTextView" />
 
-    <!-- Pergunta para o Nome do Equipamento -->
     <TextView
         android:id="@+id/nomePerguntaTextView"
         android:layout_width="wrap_content"
@@ -89,7 +83,6 @@
         app:layout_constraintStart_toStartOf="@+id/guidelineVerticalCenter"
         app:layout_constraintTop_toBottomOf="@id/idEquipamentoEditText" />
 
-    <!-- Campo Nome do Equipamento -->
     <EditText
         android:id="@+id/nomeEquipamentoEditText"
         android:layout_width="0dp"
@@ -106,7 +99,6 @@
         app:layout_constraintStart_toStartOf="@+id/guidelineVerticalCenter"
         app:layout_constraintTop_toBottomOf="@id/nomePerguntaTextView" />
 
-    <!-- Pergunta sobre a Voltagem -->
     <TextView
         android:id="@+id/voltagemPerguntaTextView"
         android:layout_width="wrap_content"
@@ -118,7 +110,6 @@
         app:layout_constraintStart_toStartOf="@+id/guidelineVerticalCenter"
         app:layout_constraintTop_toBottomOf="@id/nomeEquipamentoEditText" />
 
-    <!-- Campo Voltagem -->
     <EditText
         android:id="@+id/voltagemEditText"
         android:layout_width="0dp"
@@ -135,7 +126,6 @@
         app:layout_constraintStart_toStartOf="@+id/guidelineVerticalCenter"
         app:layout_constraintTop_toBottomOf="@id/voltagemPerguntaTextView" />
 
-    <!-- Botão Editar -->
     <Button
         android:id="@+id/editarButton"
         android:layout_width="0dp"
@@ -149,8 +139,6 @@
         app:layout_constraintEnd_toStartOf="@+id/guideline5"
         app:layout_constraintStart_toStartOf="@+id/guidelineVerticalCenter"
         app:layout_constraintTop_toBottomOf="@id/voltagemEditText" />
-
-    <!-- Botão Voltar -->
 
     <Button
         android:id="@+id/voltarButton"

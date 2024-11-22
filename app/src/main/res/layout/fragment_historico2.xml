@@ -7,7 +7,6 @@
     android:background="#f1f3ef"
     tools:context="Historico2Fragment">
 
-    <!-- Guideline para espaçamento superior -->
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guidelineTop"
         android:layout_width="wrap_content"
@@ -15,7 +14,6 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_begin="40dp" />
 
-    <!-- Guideline para espaçamento inferior -->
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guidelineBottom"
         android:layout_width="wrap_content"
@@ -23,7 +21,6 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_end="40dp" />
 
-    <!-- Título -->
     <TextView
         android:id="@+id/titleTextView"
         android:layout_width="wrap_content"
@@ -35,12 +32,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guidelineTop" />
-
-    <!-- Seção "Hoje" -->
-
-    <!-- Seção "Semanal" -->
-
-    <!-- Seção "Mensal" -->
 
     <TextView
         android:id="@+id/hojeTextView"
@@ -73,8 +64,6 @@
         app:layout_constraintTop_toBottomOf="@+id/titleTextView"
         app:strokeColor="#344E41"
         app:strokeWidth="2dp" />
-
-    <!-- Botão "Voltar" -->
 
     <TextView
         android:id="@+id/semanalTextView"

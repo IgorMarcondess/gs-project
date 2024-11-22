@@ -13,7 +13,6 @@
         android:layout_height="wrap_content"
         android:padding="16dp">
 
-        <!-- Nome do equipamento -->
         <TextView
             android:id="@+id/nomeEquipamento"
             android:layout_width="wrap_content"
@@ -26,7 +25,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
 
-        <!-- Voltagem -->
         <TextView
             android:id="@+id/voltagemEquipamento"
             android:layout_width="wrap_content"
@@ -37,7 +35,6 @@
             app:layout_constraintTop_toBottomOf="@id/nomeEquipamento"
             app:layout_constraintStart_toStartOf="parent" />
 
-        <!-- Código -->
         <TextView
             android:id="@+id/codigoEquipamento"
             android:layout_width="wrap_content"
@@ -48,7 +45,6 @@
             app:layout_constraintTop_toBottomOf="@id/nomeEquipamento"
             app:layout_constraintEnd_toEndOf="parent" />
 
-        <!-- Botões em cadeia horizontal -->
         <Button
             android:id="@+id/excluirButton"
             android:layout_width="0dp"
