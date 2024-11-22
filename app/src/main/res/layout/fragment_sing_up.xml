@@ -59,7 +59,7 @@
         android:layout_marginTop="44dp"
         android:background="@drawable/input"
         android:hint="NOME"
-        android:inputType="number"
+        android:inputType="text"
         android:padding="12dp"
         app:layout_constraintEnd_toEndOf="@+id/imagesingupImageView"
         app:layout_constraintHorizontal_bias="0.47"

@@ -30,18 +30,27 @@ class TomadaAdapter(
 
     inner class ViewHolder(private val binding: ItemTomadaBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(tomada: Tomadas) {
+            // Nome do equipamento
             binding.nomeEquipamento.text = tomada.nomeTomada
-            binding.voltagemEquipamento.text = "${tomada.voltagem} Voltz"
-            binding.codigoEquipamento.text = tomada.idTomada.toString()
 
+            // Voltagem
+            binding.voltagemEquipamento.text = "${tomada.voltagem} Voltz"
+
+            // Código do equipamento
+            binding.codigoEquipamento.text = "ID: ${tomada.idTomada}"
+
+            // Botão Excluir
             binding.excluirButton.setOnClickListener {
                 onExcluirClick(tomada)
             }
+
+            // Botão Editar
             binding.editarButton.setOnClickListener {
                 onEditarClick(tomada)
             }
         }
     }
+
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)

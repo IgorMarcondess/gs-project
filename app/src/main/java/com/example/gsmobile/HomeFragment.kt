@@ -39,7 +39,7 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         binding.registerButton.setOnClickListener {
-            findNavController().navigate(R.id.action_homeFragment_to_historicoFragment)
+            findNavController().navigate(R.id.action_homeFragment_to_tomadaFragment)
         }
         binding.LogInbutton.setOnClickListener {
 
@@ -52,7 +52,7 @@ class HomeFragment : Fragment() {
                     val result = auth.signInWithEmailAndPassword(email, password).await()
                     if (result.user != null) {
                         // Navegue para a próxima tela após login bem-sucedido
-                       findNavController().navigate(R.id.action_homeFragment_to_historicoFragment)
+                       findNavController().navigate(R.id.action_homeFragment_to_inicioFragment)
                     }
                 } catch (e: Exception) {
                     // Loga o erro e exibe uma mensagem para o usuário

@@ -32,21 +32,24 @@ class SingUpFragment : Fragment() {
     ): View? {
         _binding = FragmentSingUpBinding.inflate(inflater, container, false)
 
+        // Configuração do botão de cadastro
         binding.nextButton.setOnClickListener {
             val nome = binding.nomeEditText.text.toString().trim()
             val email = binding.emailEditText.text.toString().trim()
             val senha = binding.passwordEditText.text.toString().trim()
             val telefone = binding.phoneEditText.text.toString().trim()
 
+            // Validações
             if (!emailValido(email)) {
                 Toast.makeText(context, "Email no formato incorreto.", Toast.LENGTH_SHORT).show()
             } else if (!nomeValido(nome)) {
-                Toast.makeText(context, "CPF no formato incorreto.", Toast.LENGTH_SHORT).show()
+                Toast.makeText(context, "Nome no formato incorreto.", Toast.LENGTH_SHORT).show()
             } else if (senha.isEmpty()) {
                 Toast.makeText(context, "Senha não pode ser vazia.", Toast.LENGTH_SHORT).show()
             } else if (!telefoneValido(telefone)) {
                 Toast.makeText(context, "Somente números são permitidos no telefone.", Toast.LENGTH_SHORT).show()
             } else {
+                // Realizar cadastro
                 registerUser(nome, email, senha, telefone)
             }
         }
@@ -54,19 +57,21 @@ class SingUpFragment : Fragment() {
         return binding.root
     }
 
+    // Registrar usuário no Firebase Authentication
     private fun registerUser(nome: String, email: String, senha: String, telefone: String) {
         auth.createUserWithEmailAndPassword(email, senha)
             .addOnCompleteListener { task ->
                 if (task.isSuccessful) {
-                    // Sucesso no registro
+                    // Registro bem-sucedido
                     val userId = auth.currentUser?.uid
-                    userId?.let {
-                        saveUserData(it, nome, email, telefone)
+                    if (userId != null) {
+                        saveUserData(userId, nome, email, telefone) // Salvar no Realtime Database
                     }
                     Toast.makeText(context, "Cadastro bem-sucedido", Toast.LENGTH_SHORT).show()
-                    //findNavController().navigate()
+                    findNavController().navigate(R.id.action_singUpFragment_to_inicioFragment)
                 } else {
-                    Toast.makeText(context, "Erro ao realizar cadastro", Toast.LENGTH_SHORT).show()
+                    // Erro no registro
+                    Toast.makeText(context, "Erro ao realizar cadastro: ${task.exception?.message}", Toast.LENGTH_SHORT).show()
                     Log.e("SignUpFragment", "Erro ao realizar cadastro de usuário", task.exception)
                 }
             }
@@ -74,19 +79,22 @@ class SingUpFragment : Fragment() {
 
     private fun saveUserData(userId: String, nome: String, email: String, telefone: String) {
         val userMap = mapOf(
-            "nome" to nome,
-            "email" to email,
-            "telefone" to telefone
+            "Nome" to nome,
+            "E-mail" to email,
+            "Telefone" to telefone
         )
-        database.getReference("usuarios").child(userId).setValue(userMap)
+        database.getReference("Usuario cadastrados").child(userId).setValue(userMap)
             .addOnCompleteListener { task ->
                 if (task.isSuccessful) {
                     Log.i("SignUpFragment", "Dados do usuário salvos no Realtime Database")
+                    Toast.makeText(context, "Dados salvos com sucesso!", Toast.LENGTH_SHORT).show()
                 } else {
                     Log.e("SignUpFragment", "Erro ao salvar dados no Banco de dados", task.exception)
+                    Toast.makeText(context, "Erro ao salvar dados: ${task.exception?.message}", Toast.LENGTH_SHORT).show()
                 }
             }
     }
+
 
     private fun emailValido(email: String): Boolean {
         return email.contains("@") && email.contains(".com") && email.isNotEmpty()

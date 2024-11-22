@@ -14,9 +14,6 @@ data class Information(
 data class Tomadas(
     val idTomada: Int,
     val nomeTomada: String,
-    val diaContagem: String?,
-    val qtdGasta: Int?,
-    val tarifaEletricidade: Int?,
     val voltagem: String
 )
 interface InformationAPI {
