@@ -32,11 +32,13 @@
         app:layout_constraintGuide_begin="20dp" />
 
     <!-- Título -->
+
+    <!-- Pergunta para o Código do Equipamento -->
     <TextView
         android:id="@+id/tituloTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="84dp"
+        android:layout_marginTop="52dp"
         android:text="Editar equipamento"
         android:textColor="#344E41"
         android:textSize="25sp"
@@ -45,7 +47,6 @@
         app:layout_constraintStart_toStartOf="@+id/guidelineVerticalCenter"
         app:layout_constraintTop_toTopOf="@+id/guidelineTop" />
 
-    <!-- Pergunta para o Código do Equipamento -->
     <TextView
         android:id="@+id/codigoPerguntaTextView"
         android:layout_width="wrap_content"
@@ -150,18 +151,35 @@
         app:layout_constraintTop_toBottomOf="@id/voltagemEditText" />
 
     <!-- Botão Voltar -->
+
     <Button
         android:id="@+id/voltarButton"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="15dp"
-        android:layout_marginStart="15dp"
         android:backgroundTint="#344E41"
         android:text="Voltar"
         android:textColor="#FFFFFF"
         app:layout_constraintEnd_toStartOf="@+id/guideline5"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/guidelineVerticalCenter"
-        app:layout_constraintTop_toBottomOf="@id/editarButton" />
+        app:layout_constraintTop_toBottomOf="@+id/deletarButton" />
+
+    <Button
+        android:id="@+id/deletarButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="15dp"
+        android:backgroundTint="#344E41"
+        android:text="Deletar"
+        android:textColor="#FFFFFF"
+        app:layout_constraintEnd_toStartOf="@+id/guideline5"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/guidelineVerticalCenter"
+        app:layout_constraintTop_toBottomOf="@+id/editarButton" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -32,14 +32,12 @@ class SingUpFragment : Fragment() {
     ): View? {
         _binding = FragmentSingUpBinding.inflate(inflater, container, false)
 
-        // Configuração do botão de cadastro
         binding.nextButton.setOnClickListener {
             val nome = binding.nomeEditText.text.toString().trim()
             val email = binding.emailEditText.text.toString().trim()
             val senha = binding.passwordEditText.text.toString().trim()
             val telefone = binding.phoneEditText.text.toString().trim()
 
-            // Validações
             if (!emailValido(email)) {
                 Toast.makeText(context, "Email no formato incorreto.", Toast.LENGTH_SHORT).show()
             } else if (!nomeValido(nome)) {
@@ -49,7 +47,7 @@ class SingUpFragment : Fragment() {
             } else if (!telefoneValido(telefone)) {
                 Toast.makeText(context, "Somente números são permitidos no telefone.", Toast.LENGTH_SHORT).show()
             } else {
-                // Realizar cadastro
+
                 registerUser(nome, email, senha, telefone)
             }
         }
@@ -57,20 +55,18 @@ class SingUpFragment : Fragment() {
         return binding.root
     }
 
-    // Registrar usuário no Firebase Authentication
+
     private fun registerUser(nome: String, email: String, senha: String, telefone: String) {
         auth.createUserWithEmailAndPassword(email, senha)
             .addOnCompleteListener { task ->
                 if (task.isSuccessful) {
-                    // Registro bem-sucedido
                     val userId = auth.currentUser?.uid
                     if (userId != null) {
-                        saveUserData(userId, nome, email, telefone) // Salvar no Realtime Database
+                        saveUserData(userId, nome, email, telefone)
                     }
                     Toast.makeText(context, "Cadastro bem-sucedido", Toast.LENGTH_SHORT).show()
                     findNavController().navigate(R.id.action_homeFragment_to_singUpFragment)
                 } else {
-                    // Erro no registro
                     Toast.makeText(context, "Erro ao realizar cadastro: ${task.exception?.message}", Toast.LENGTH_SHORT).show()
                     Log.e("SignUpFragment", "Erro ao realizar cadastro de usuário", task.exception)
                 }
@@ -86,8 +82,8 @@ class SingUpFragment : Fragment() {
         database.getReference("Usuario cadastrados").child(userId).setValue(userMap)
             .addOnCompleteListener { task ->
                 if (task.isSuccessful) {
-                    Log.i("SignUpFragment", "Dados do usuário salvos no Realtime Database")
-                    Toast.makeText(context, "Dados salvos com sucesso!", Toast.LENGTH_SHORT).show()
+                    Log.i("SignUpFragment", "Dados do usuário salvos no banco de dados")
+                    Toast.makeText(context, "Dados salvos com sucesso no banco de dados!", Toast.LENGTH_SHORT).show()
                 } else {
                     Log.e("SignUpFragment", "Erro ao salvar dados no Banco de dados", task.exception)
                     Toast.makeText(context, "Erro ao salvar dados: ${task.exception?.message}", Toast.LENGTH_SHORT).show()

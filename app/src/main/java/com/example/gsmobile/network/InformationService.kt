@@ -19,12 +19,11 @@ class InformationService(
         return api.getTomadas()
     }
 
-    // Deletar uma tomada pelo ID
     suspend fun deleteTomada(id: Int) {
         api.deleteTomada(id)
     }
 
-    // Editar uma tomada pelo ID
+
     suspend fun updateTomada(id: Int, nomeTomada: String, voltagem: String) {
         val request = Information(nomeTomada, voltagem)
         api.updateTomada(id, request)

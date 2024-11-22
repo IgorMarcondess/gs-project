@@ -44,45 +44,21 @@
         app:layout_constraintStart_toStartOf="@+id/guidelineVerticalCenter"
         app:layout_constraintTop_toTopOf="@+id/guideline3" />
 
-    <TextView
-        android:id="@+id/codigoPerguntaTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="92dp"
-        android:text="Código do equipamento"
-        android:textColor="#FFFFFF"
-        app:layout_constraintEnd_toStartOf="@+id/guideline5"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="@+id/guidelineVerticalCenter"
-        app:layout_constraintTop_toBottomOf="@id/tituloTextView" />
-
-    <EditText
-        android:id="@+id/codigoEquipamentoEditText"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginEnd="15dp"
-        android:background="@drawable/input"
-        android:hint="CÓDIGO"
-        android:padding="12dp"
-        app:layout_constraintEnd_toStartOf="@+id/guideline5"
-        app:layout_constraintStart_toStartOf="@+id/guidelineVerticalCenter"
-        app:layout_constraintTop_toBottomOf="@id/codigoPerguntaTextView" />
-
     <!-- Pergunta para o Nome do Equipamento -->
+
+    <!-- Campo Nome do Equipamento -->
+
     <TextView
         android:id="@+id/nomePerguntaTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="56dp"
         android:text="Nome do equipamento"
         android:textColor="#FFFFFF"
         app:layout_constraintEnd_toStartOf="@+id/guideline5"
         app:layout_constraintStart_toStartOf="@+id/guidelineVerticalCenter"
-        app:layout_constraintTop_toBottomOf="@id/codigoEquipamentoEditText" />
+        app:layout_constraintTop_toBottomOf="@+id/tituloTextView" />
 
-    <!-- Campo Nome do Equipamento -->
     <EditText
         android:id="@+id/nomeEquipamentoEditText"
         android:layout_width="0dp"
@@ -125,21 +101,24 @@
         app:layout_constraintTop_toBottomOf="@id/voltagemPerguntaTextView" />
 
     <!-- Botão Enviar -->
+
+    <!-- Botão Voltar -->
+
     <Button
         android:id="@+id/enviarButton"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="15dp"
-        android:layout_marginTop="45dp"
+        android:layout_marginTop="64dp"
         android:layout_marginEnd="15dp"
         android:backgroundTint="#344E41"
         android:text="Enviar"
         android:textColor="#FFFFFF"
         app:layout_constraintEnd_toStartOf="@+id/guideline5"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/guidelineVerticalCenter"
         app:layout_constraintTop_toBottomOf="@id/voltagemEditText" />
 
-    <!-- Botão Voltar -->
     <Button
         android:id="@+id/voltarButton"
         android:layout_width="0dp"

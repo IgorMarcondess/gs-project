@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.example.gsmobile.databinding.FragmentTomadaBinding
 import com.example.gsmobile.network.InformationService
 import kotlinx.coroutines.CoroutineScope
@@ -42,6 +43,10 @@ class TomadaFragment : Fragment() {
             sendInformation()
         }
 
+        binding.voltarButton.setOnClickListener {
+            findNavController().navigate(R.id.action_tomadaFragment_to_inicioFragment)
+        }
+
     }
 
     private fun sendInformation() {
@@ -64,9 +69,14 @@ class TomadaFragment : Fragment() {
 
         CoroutineScope(Dispatchers.IO).launch {
             try {
-                val response = service.sendInformation(nome, voltagemText)
-                CoroutineScope(Dispatchers.Main).launch {
-                    Toast.makeText(requireContext(), "Informações enviadas com sucesso!", Toast.LENGTH_SHORT).show()
+                if(voltagemText == "220" || voltagemText == "110"){
+                    val response = service.sendInformation(nome, voltagemText)
+                    CoroutineScope(Dispatchers.Main).launch {
+                        Toast.makeText(requireContext(), "Informações enviadas com sucesso!", Toast.LENGTH_SHORT).show()
+                        findNavController().navigate(R.id.action_tomadaFragment_to_inicioFragment)
+                    }
+                }else {
+                    Toast.makeText(requireContext(), "Campo Voltz diferente de 220 ou 110", Toast.LENGTH_SHORT).show()
                 }
             } catch (e: Exception) {
                 CoroutineScope(Dispatchers.Main).launch {

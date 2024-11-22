@@ -22,7 +22,7 @@ class TomadaAdapter(
     private val onEditarClick: (Tomadas) -> Unit
 ) : RecyclerView.Adapter<TomadaAdapter.ViewHolder>() {
 
-    private var tomadasList: List<Tomadas> = emptyList()
+    private lateinit var tomadasList: List<Tomadas>
 
     init {
         fetchTomadas()

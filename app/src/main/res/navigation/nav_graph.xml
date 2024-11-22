@@ -14,9 +14,6 @@
             android:id="@+id/action_homeFragment_to_singUpFragment"
             app:destination="@id/singUpFragment" />
         <action
-            android:id="@+id/action_homeFragment_to_editFragment"
-            app:destination="@id/editFragment" />
-        <action
             android:id="@+id/action_homeFragment_to_tomadaFragment"
             app:destination="@id/tomadaFragment" />
         <action
@@ -35,10 +32,28 @@
     <fragment
         android:id="@+id/tomadaFragment"
         android:name="com.example.gsmobile.TomadaFragment"
-        android:label="TomadaFragment" />
+        android:label="TomadaFragment" >
+        <action
+            android:id="@+id/action_tomadaFragment_to_inicioFragment"
+            app:destination="@id/inicioFragment" />
+    </fragment>
     <fragment
         android:id="@+id/inicioFragment"
         android:name="com.example.gsmobile.InicioFragment"
         android:label="fragment_inicio"
-        tools:layout="@layout/fragment_inicio" />
+        tools:layout="@layout/fragment_inicio" >
+        <action
+            android:id="@+id/action_inicioFragment_to_tomadaFragment"
+            app:destination="@id/tomadaFragment" />
+        <action
+            android:id="@+id/action_inicioFragment_to_editFragment2"
+            app:destination="@id/editFragment" />
+        <action
+            android:id="@+id/action_inicioFragment_to_historicoFragment"
+            app:destination="@id/historicoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/historicoFragment"
+        android:name="com.example.gsmobile.historicoFragment"
+        android:label="historicoFragment" />
 </navigation>

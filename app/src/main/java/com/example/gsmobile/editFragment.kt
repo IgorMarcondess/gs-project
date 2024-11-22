@@ -2,12 +2,11 @@ package com.example.gsmobile
 
 import android.os.Bundle
 import android.util.Log
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
-import androidx.navigation.fragment.findNavController
 import com.example.gsmobile.databinding.FragmentEditBinding
 import com.example.gsmobile.network.InformationService
 import kotlinx.coroutines.CoroutineScope
@@ -15,7 +14,6 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import okhttp3.OkHttpClient
-
 
 class editFragment : Fragment() {
 
@@ -39,6 +37,10 @@ class editFragment : Fragment() {
 
         binding.editarButton.setOnClickListener {
             editarTomada()
+        }
+
+        binding.deletarButton.setOnClickListener {
+            deletarTomada()
         }
 
         binding.voltarButton.setOnClickListener {
@@ -75,6 +77,35 @@ class editFragment : Fragment() {
                 withContext(Dispatchers.Main) {
                     Log.e("EditFragment", "Erro ao atualizar tomada", e)
                     Toast.makeText(context, "Erro ao atualizar: ${e.message}", Toast.LENGTH_SHORT).show()
+                }
+            }
+        }
+    }
+
+    private fun deletarTomada() {
+        val idText = binding.idEquipamentoEditText.text.toString().trim()
+
+        if (idText.isEmpty()) {
+            Toast.makeText(context, "Informe o ID para deletar a tomada!", Toast.LENGTH_SHORT).show()
+            return
+        }
+
+        val idTomada = idText.toIntOrNull()
+        if (idTomada == null) {
+            Toast.makeText(context, "ID inválido.", Toast.LENGTH_SHORT).show()
+            return
+        }
+
+        CoroutineScope(Dispatchers.IO).launch {
+            try {
+                informationService.deleteTomada(idTomada)
+                withContext(Dispatchers.Main) {
+                    Toast.makeText(context, "Tomada deletada com sucesso!", Toast.LENGTH_SHORT).show()
+                }
+            } catch (e: Exception){
+                withContext(Dispatchers.Main) {
+                    Log.e("EditFragment", "Erro ao deletar tomada", e)
+                    Toast.makeText(context, "Erro ao deletar tomada: ${e.message}", Toast.LENGTH_SHORT).show()
                 }
             }
         }

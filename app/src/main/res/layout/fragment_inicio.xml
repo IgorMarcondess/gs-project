@@ -37,36 +37,36 @@
         app:strokeWidth="2dp" />
 
     <Button
-        android:id="@+id/historicoButton"
-        android:layout_width="348dp"
-        android:layout_height="100dp"
-        android:layout_marginHorizontal="32dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="40dp"
-        android:backgroundTint="#F5F5F5"
-        android:text="Histórico"
-        android:textColor="#344E41"
-        android:textSize="20sp"
-        app:cornerRadius="8dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cadastroButton"
-        app:strokeColor="#344E41"
-        app:strokeWidth="2dp" />
-
-    <Button
         android:id="@+id/equipamentoButton"
         android:layout_width="348dp"
         android:layout_height="100dp"
         android:layout_marginHorizontal="32dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="36dp"
         android:backgroundTint="#F5F5F5"
         android:text="Equipamentos"
         android:textColor="#344E41"
         android:textSize="20sp"
         app:cornerRadius="8dp"
-        app:layout_constraintEnd_toEndOf="@+id/historicoButton"
-        app:layout_constraintStart_toStartOf="@+id/historicoButton"
-        app:layout_constraintTop_toBottomOf="@+id/historicoButton"
+        app:layout_constraintEnd_toEndOf="@+id/cadastroButton"
+        app:layout_constraintStart_toStartOf="@+id/cadastroButton"
+        app:layout_constraintTop_toBottomOf="@+id/cadastroButton"
+        app:strokeColor="#344E41"
+        app:strokeWidth="2dp" />
+
+    <Button
+        android:id="@+id/editButton"
+        android:layout_width="348dp"
+        android:layout_height="100dp"
+        android:layout_marginHorizontal="32dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="36dp"
+        android:backgroundTint="#F5F5F5"
+        android:text="Editar Equipamento"
+        android:textColor="#344E41"
+        android:textSize="20sp"
+        app:cornerRadius="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/equipamentoButton"
         app:strokeColor="#344E41"
         app:strokeWidth="2dp" />
 
