@@ -1,4 +1,4 @@
-<h1 align="left"> Global Solution: Java Advanced</h1>
+<h1 align="left"> Global Solution: Mobile</h1>
 <p align="left">O projeto N.I.B. visa desenvolver um aplicativo que permite aos usuários cadastrarem informações de tomadas inteligentes, indicando o valor de consumo apresentaod para ela para que seja possível identificar padrões e o tanto de gastos.</p>
 
 <h2 align="left">Integrantes</h2>
