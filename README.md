@@ -41,6 +41,11 @@
 ```bash
 https://youtu.be/MsGUwGbkH_E
 ```
+<h2 align="left"> 📹 Link do Figma</h2>
+
+```bash
+https://www.figma.com/design/HkD4yaTugW8AWa6Z7taD5I/N.I.B?m=auto&t=iIMf61Pcefd9lkUG-1
+```
 
 <h2 align="left"> 💰 Link do pitch</h2>
 
