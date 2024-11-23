@@ -3,9 +3,9 @@
 
 <h2 align="left">Integrantes</h2>
 <ul>
-  <li><strong>11/11</strong>RM553544 - Igor Gabriel P. Marcondes </li> 
-  <li> 🗓️ <strong>11/11</strong>RM552744 - Nicholas P. P. Barbosa Lima</em> </li>
-  <li> 🗓️ <strong>22/11</strong>RM552669 - Maria Beatriz R. F. de Godoy </li> 
+  <li>RM553544 - Igor Gabriel P. Marcondes </li> 
+  <li>RM552744 - Nicholas P. P. Barbosa Lima</em> </li>
+  <li>RM552669 - Maria Beatriz R. F. de Godoy </li> 
 </ul>
 <h2 align="left">Benefícios do Aplicativo</h2>
 <ul>
