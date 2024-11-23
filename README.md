@@ -39,7 +39,7 @@
 <h2 align="left"> 📹 Link do vídeo</h2>
 
 ```bash
-https://youtu.be/MsGUwGbkH_E
+https://www.youtube.com/watch?v=myngwnviy90
 ```
 <h2 align="left"> 📹 Link do Figma</h2>
 
