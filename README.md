@@ -46,6 +46,11 @@ https://www.youtube.com/watch?v=myngwnviy90
 ```bash
 https://www.figma.com/design/HkD4yaTugW8AWa6Z7taD5I/N.I.B?m=auto&t=iIMf61Pcefd9lkUG-1
 ```
+<h2 align="left"> 📹 Link do protótipo</h2>
+
+```bash
+https://youtube.com/shorts/edRr4M1jmKU?feature=share
+```
 
 <h2 align="left"> 💰 Link do pitch</h2>
 
