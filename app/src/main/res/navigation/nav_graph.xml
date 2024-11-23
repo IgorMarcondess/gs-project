@@ -23,7 +23,11 @@
     <fragment
         android:id="@+id/singUpFragment"
         android:name="com.example.gsmobile.SingUpFragment"
-        android:label="SingUpFragment" />
+        android:label="SingUpFragment" >
+        <action
+            android:id="@+id/action_singUpFragment_to_inicioFragment"
+            app:destination="@id/inicioFragment" />
+    </fragment>
     <fragment
         android:id="@+id/editFragment"
         android:name="com.example.gsmobile.editFragment"
